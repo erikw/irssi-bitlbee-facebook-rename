@@ -64,9 +64,9 @@ sub munge_nickname
   $nick =~ s/[- ]/_/g;
   $nick = unidecode($nick); 
   $nick =~ s/[^A-Za-z0-9-]//g;
-  $nick = substr $nick, 0, 24;
+  $nick = substr $nick, 0, 21;
 
-  return $nick;
+  return "fb_" . $nick;
 }
 
 Irssi::signal_add_first 'message join' => 'message_join';
